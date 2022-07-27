@@ -24,11 +24,13 @@ public class DemoSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
             http.authorizeRequests()
-               .anyRequest().authenticated()
+                    .anyRequest().authenticated()
                .and()
                .formLogin()
-               .loginPage("/showMyLoginPage")  // request mapping to our login page
-               .loginProcessingUrl("/authenticateTheUser") // login form should POST data to this URL for check user id and pwd
-               .permitAll(); // allow everyone to see login page w/o being logged in
+                    .loginPage("/showMyLoginPage")  // request mapping to our login page
+                    .loginProcessingUrl("/authenticateTheUser") // login form should POST data to this URL for check user id and pwd
+                    .permitAll() // allow everyone to see login page w/o being logged in
+                .and()
+                .logout().permitAll();
     }
 }
