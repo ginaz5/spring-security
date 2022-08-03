@@ -23,6 +23,18 @@
     </p>
     <hr>
 
+    <!-- Add a link to point to /leaders for managers -->
+    <p>
+        <a href="${pageContext.request.contextPath}/leaders">LeaderShip Meeting</a>
+        (Only for Manager peeps)
+    </p>
+
+    <!-- Add a link to point to /systems for admin -->
+    <p>
+        <a href="${pageContext.request.contextPath}/systems">IT Systems Meeting</a>
+        (Only for Admin users)
+    </p>
+
     <!-- Add logout button-->
     <form:form action="${pageContext.request.contextPath}/logout"
            method="post">
