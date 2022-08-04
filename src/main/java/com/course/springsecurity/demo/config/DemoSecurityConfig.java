@@ -33,6 +33,8 @@ public class DemoSecurityConfig extends WebSecurityConfigurerAdapter {
                     .loginProcessingUrl("/authenticateTheUser") // login form should POST data to this URL for check user id and pwd
                     .permitAll() // allow everyone to see login page w/o being logged in
                 .and()
-                .logout().permitAll();
+                .logout().permitAll()
+                .and()
+                .exceptionHandling().accessDeniedPage("/access-denied");
     }
 }
